@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Studio Chorok</title>
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            scroll-behavior: smooth;
+            font-family: sans-serif;
+        }
+
+        body {
+            overflow-x: hidden;
+        }
+
+        /* Fixed logo area (top-left corner) */
+        #logo {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            width: 200px;
+            /* maintain 8:1 ratio by selecting appropriate width */
+            z-index: 10000;
+        }
+
+        #logo img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Section styling */
+        .section {
+            width: 100%;
+            height: 100vh;
+            position: relative;
+        }
+
+        /* Fixed text container in the center of the viewport */
+        #fixed-text {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: #fff;
+            text-align: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        #fixed-text h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        #fixed-text p {
+            font-size: 1.2rem;
+        }
+
+        /* Background color classes for gradually green sections */
+        .bg1 {
+            background-color: #3a4d3a;
+        }
+
+        .bg2 {
+            background-color: #2f4e2f;
+        }
+
+        .bg3 {
+            background-color: #225222;
+        }
+
+        .bg4 {
+            background-color: #115211;
+        }
+
+        .bg5 {
+            background-color: #004400;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Top-left fixed logo -->
+    <div id="logo">
+        <img src="img/CI.png" alt="Studio Chorok" />
+    </div>
+
+    <!-- Fixed text container -->
+    <div id="fixed-text">
+        <h1 id="fixed-title">Section 1</h1>
+        <p id="fixed-paragraph">Put your desired text here.</p>
+    </div>
+
+    <!-- 5 sections with gradually green backgrounds -->
+    <section class="section bg1" data-title="Design & Development Experts"
+        data-text="From UI/UX, printing, digital media, mobile apps, to mobile games, we provide innovative solutions across all areas.">
+    </section>
+    <section class="section bg2" data-title="UI/UX Innovation"
+        data-text="We prioritize user experience and create beautiful interfaces that boost business value."></section>
+    <section class="section bg3" data-title="Printing & Digital Content"
+        data-text="From branding materials to digital content, we deliver synergy across online and offline markets.">
+    </section>
+    <section class="section bg4" data-title="Mobile Apps & Game Development"
+        data-text="Excel in the smartphone era with outstanding apps and games that set you apart."></section>
+    <section class="section bg5" data-title="Your Total Design & Development Partner"
+        data-text="Transform your ideas into reality! Trust us with every step from design to development."></section>
+
+    <script>
+        // Get the fixed text elements
+        const fixedText = document.getElementById('fixed-text');
+        const fixedTitle = document.getElementById('fixed-title');
+        const fixedParagraph = document.getElementById('fixed-paragraph');
+
+        // Select all sections
+        const sections = document.querySelectorAll('.section');
+
+        const options = {
+            threshold: 0.6 // triggers when 60% of section is visible
+        };
+
+        // Intersection Observer callback
+        function onIntersect(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    // Fade out the text before changing content
+                    fixedText.style.opacity = 0;
+                    setTimeout(() => {
+                        // Get new data from section
+                        const newTitle = entry.target.getAttribute('data-title');
+                        const newParagraph = entry.target.getAttribute('data-text');
+                        // Update text
+                        fixedTitle.textContent = newTitle;
+                        fixedParagraph.textContent = newParagraph;
+                        // Fade in
+                        fixedText.style.opacity = 1;
+                    }, 500);
+                }
+            });
+        }
+
+        // Create an observer and observe each section
+        const observer = new IntersectionObserver(onIntersect, options);
+        sections.forEach(section => observer.observe(section));
+    </script>
+</body>
+
+</html>
