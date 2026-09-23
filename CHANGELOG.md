@@ -9,6 +9,20 @@ All notable changes to this project will be documented in this file following th
 
 ---
 
+## [1.5.0] - 2026-09-24
+
+### Added & Artistic Breakthrough / 신규 기능 및 아티스틱 혁신
+- **Custom GLSL Shader Pipeline (`js/three-scene.js v1.5.0`)**:
+  - Implemented **Quantum Nebula Particle Shader** (`THREE.ShaderMaterial`): 3D procedural harmonic wave displacement and soft Gaussian falloff (`exp(-r*r*9.0)`) with per-particle twinkle shimmer.
+  - Implemented **Holographic Fresnel Art Sculpture Shader**: Dynamic Fresnel iridescent glow (`pow(1.0 - dot(N, V), 2.5)`) refracting electric cyan and luminous gold along the organic 3D metallic Torus Knot.
+  - 커스텀 GLSL 쉐이더 파이프라인 탑재: 3D 조화 파동과 가우시안 소프트 감쇠를 머금은 양자 성운 파티클 쉐이더 및 시점 각도에 따라 영롱하게 굴절·산란되는 홀로그래픽 프레넬 조각품 쉐이더 구현.
+- **Dynamic Bright Gallery to Deep Void Atmospheric Transition (`js/three-scene.js`, `css/style.css`, `js/main.js`)**:
+  - **Sections 1–4 (Overview, UI/UX, Branding, Engineering)**: Bathed in a luminous, ethereal bright gallery atmosphere (`#f2f8f5`), showcasing translucent prism art and high-contrast deep forest/emerald gradient Pretendard typography.
+  - **Section 5 (Contact: Your Total Partner)**: Seamlessly transitions into a deep obsidian cosmic void (`#030705`), making radiant white typography, gold/cyan rim lights, and glowing emerald contact buttons dramatically pop.
+  - 스크롤 진행에 따른 실시간 분위기 전환 시스템: 섹션 1~4는 맑고 우아한 밝은 갤러리 분위기로 연출하고, 섹션 5(Contact) 도달 시 깊고 신비로운 어두운 밤하늘(보이드 블랙)로 매끄럽게 페이드 전환.
+
+---
+
 ## [1.4.0] - 2026-09-24
 
 ### Changed & Refined / 변경 및 디자인 정제

@@ -1,7 +1,7 @@
 # Studio Chorok Architecture & System Structure / 시스템 구조 및 아키텍처 명세서
 
 > **Language Notice / 언어 안내**: This document is provided in both English and Korean. / 본 문서는 영문과 한글을 동시에 병기하여 제공됩니다.
-> **Current Version / 현재 버전**: `1.4.0` (Pretendard Typography & Pure Minimalist Tag Edition)
+> **Current Version / 현재 버전**: `1.5.0` (Custom GLSL Shaders & Dynamic Atmospheric Transition Edition)
 
 ---
 
@@ -9,13 +9,13 @@
 
 ```text
 Studio-Chorok.github.io/
-├── index.html                  # Fullscreen Editorial Document & Semantic Layout / 풀스크린 에디토리얼 시맨틱 웹 문서
+├── index.html                  # Fullscreen Semantic Layout / 풀스크린 시맨틱 웹 문서
 ├── css/
-│   └── style.css               # Pretendard Typography, Color Tokens & Layout / 프리텐다드 서체, 컬러 토큰 및 레이아웃
+│   └── style.css               # Dual Luminous & Deep Void Atmosphere Tokens / 밝은 갤러리 및 딥 보이드 듀얼 테마 스타일
 ├── js/
-│   ├── three-scene.js          # Multi-Chromatic Cosmic Aurora & Sculptural Engine / 멀티 크로매틱 코스믹 오로라 & 3D 조각품 엔진
+│   ├── three-scene.js          # Custom GLSL Shaders & Atmospheric Three.js Engine / 커스텀 GLSL 쉐이더 및 배경 3D 엔진
 │   ├── motion.js               # Restrained Stagger Transitions / 절제된 시네마틱 스태거 모션
-│   └── main.js                 # App Coordinator, Scroll Tracker & Direct Mail Copy / 메인 앱 코디네이터, 스크롤 추적 및 메일 복사
+│   └── main.js                 # App Controller & Scroll Theme Coordinator / 스크롤 기반 테마 전환 및 앱 코디네이터
 ├── img/
 │   └── CI.png                  # Studio Chorok Corporate Identity Logo / 스튜디오 초록 공식 CI 로고
 ├── app-ads.txt                 # Ad Verification File / 광고주 인증 텍스트
@@ -25,7 +25,7 @@ Studio-Chorok.github.io/
 ├── WIKI.md                     # Function Reference & Technical Wiki / 함수 상세 레퍼런스 및 테크니컬 위키
 ├── README.md                   # Project Overview, Usage & Pros/Cons / 프로젝트 개요, 사용방법 및 장단점
 ├── CHANGELOG.md                # SemVer Version History & Changelog / 시맨틱 버저닝 기반 변경 이력서
-└── GUIDE.md                    # User Customization & Deployment Guide / 사용자 설정 및 GitHub Pages 배포 가이드
+└── GUIDE.md                    # User Customization & Deployment Guide / 사용자 설정 및 배포 가이드
 ```
 
 ---
@@ -35,16 +35,21 @@ Studio-Chorok.github.io/
 ```mermaid
 graph TD
     subgraph ClientBrowser [Client Browser Environment / 클라이언트 브라우저 환경]
-        DOM[HTML5 Fullscreen Editorial DOM Tree]
-        PretendardType[Pretendard Single Font System - No Italics]
+        DOM[HTML5 Fullscreen Layout - Pretendard]
         CanvasWebGL[WebGL Canvas #webgl-canvas-container]
+        ThemeLayer[Dual Luminous / Deep Void Theme Engine]
     end
 
     subgraph CoreEngine [JavaScript Modular Engine Layer / 자바스크립트 모듈 엔진 레이어]
-        AppCtrl[AppController - main.js]
-        ThreeEng[ThreeScene - Multi-Chromatic Cosmos - three-scene.js]
-        MotionEng[MotionManager - Restrained Transitions - motion.js]
+        AppCtrl[AppController - main.js v1.5.0]
+        ThreeEng[ThreeScene - GLSL Shaders & Atmosphere - three-scene.js v1.5.0]
+        MotionEng[MotionManager - motion.js]
         Clipboard[Navigator Clipboard API & Toast Feedback]
+    end
+
+    subgraph Shaders [Custom GLSL Shaders Layer / 커스텀 GLSL 쉐이더 레이어]
+        ParticleShader[Quantum Nebula Particle Shader - Gaussian Falloff & Wave]
+        SculptureShader[Holographic Fresnel Sculpture Shader - Iridescent Sheen]
     end
 
     subgraph ExternalLibraries [Verified High-Performance CDNs / 외부 라이브러리]

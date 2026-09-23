@@ -11,7 +11,7 @@
 ---
 
 > **Language Notice / 언어 안내**: This document is provided in both English and Korean. / 본 문서는 영문과 한글을 동시에 병기하여 제공됩니다.
-> **Current Version / 현재 버전**: `1.4.0` (Pretendard Single Font & Pure Typography Edition)
+> **Current Version / 현재 버전**: `1.5.0` (Custom GLSL Shaders & Dynamic Atmospheric Transition Edition)
 
 ---
 
@@ -20,21 +20,25 @@
 ### English
 **Studio Chorok (스튜디오 초록)** is a specialized design and digital engineering studio delivering innovative solutions across UI/UX, printing, digital media, mobile apps, and interactive games.
 
-Version `1.4.0` introduces a **modern minimalist typography refresh and pure text layout**:
-- **Unified Pretendard Typography**: Standardized on Pretendard across all headlines, tags, and body text. Completely removed italics for a crisp, solid modern appearance.
-- **Pure Text Category Tags**: Removed the green dot indicator and oval background pill; category tags now display purely as clean, luminous Cyan uppercase text.
-- **Removed Auxiliary Quote Boxes**: Stripped decorative quote frames across all sections to direct 100% reader focus on authentic core messages.
-- **Multi-Chromatic 3D Engine**: Jewel tones (Electric Cyan, Luminous Gold, Cosmic Violet) blended with signature Emerald, illuminated by dual dynamic rim lights.
-- **Direct Inquiry Channel**: Instant one-click email copying for `studio.chorok@gmail.com`.
+Version `1.5.0` introduces **artistic custom GLSL shaders and a dynamic atmosphere transition**:
+- **Quantum Nebula Particle Shader**: Procedural 3D harmonic wave motion with soft Gaussian falloff, breathing and twinkling naturally across space.
+- **Holographic Fresnel Sculpture Shader**: An organic 3D metallic Torus Knot refracting iridescent cyan and amber rim lights based on grazing viewing angles.
+- **Dynamic Bright-to-Dark Atmospheric Shift**:
+  - *Sections 1–4*: Luminous, ethereal bright gallery atmosphere (`#f2f8f5`) with translucent prism art and high-contrast deep forest/emerald gradient Pretendard typography.
+  - *Section 5 (Contact)*: Automatically transitions into a deep obsidian cosmic void (`#030705`), dramatically illuminating radiant white typography and glowing emerald buttons.
+- **Minimalist Pretendard Typography**: Unified sans-serif system with strictly no italics and pure text category tags.
+- **Direct Official Inquiry**: Direct one-click email copying for `studio.chorok@gmail.com`.
 
 ### 한국어
 **스튜디오 초록(Studio Chorok)**은 UI/UX, 인쇄 브랜딩, 디지털 미디어, 모바일 앱 및 모바일 게임에 이르기까지 전 영역에서 혁신적인 솔루션을 제공하는 디자인 & 엔지니어링 스튜디오입니다.
 
-`v1.4.0` 버전은 **프리텐다드(Pretendard) 단일 서체 개편 및 순수 텍스트 타이포그래피 정제**를 적용했습니다:
-- **Pretendard 단일 서체 통일**: 모든 제목, 태그, 본문 폰트를 Pretendard로 전면 일원화하고 이탤릭체를 완전히 배제하여 현대적이고 단단한 가독성 완성.
-- **순수 텍스트 카테고리 태그**: 섹션 태그 앞의 초록색 점과 타원형 테두리/배경을 제거하고, 순수 시안 텍스트 형태로만 간결하게 표시.
-- **장식용 인용구 프레임 제거**: 각 섹션에 부가적으로 배치되어 있던 장식용 인용구 박스를 일체 삭제하여 브랜드의 진정성 있는 원본 텍스트에 온전히 집중.
-- **멀티 크로매틱 3D 엔진**: 시그니처 에메랄드에 일렉트릭 시안, 럭셔리 골드, 코스믹 바이올렛이 조화를 이루는 3D 토러스 및 듀얼 림라이트 연출.
+`v1.5.0` 버전은 **커스텀 GLSL 쉐이더 파이프라인 및 스크롤 연동 다이내믹 분위기 전환**을 탑재하여 현대 디지털 아트 웹의 정수를 구현했습니다:
+- **양자 성운 파티클 쉐이더**: 절차적 3D 조화 진동과 가우시안 소프트 감쇠를 통해 우주 공간 속에서 유기적으로 유영하고 반짝이는 소프트 파티클 필드.
+- **홀로그래픽 프레넬 조각품 쉐이더**: 시선 각도에 따라 일렉트릭 시안과 샴페인 골드가 영롱하게 굴절·산란되는 유기적 3D 메탈릭 토러스 아트 조각품.
+- **스크롤 연동 실시간 분위기 전환 (Bright -> Deep Void)**:
+  - *섹션 1~4*: 맑고 몽환적인 밝은 아트 갤러리 분위기(`#f2f8f5`) 속에서 투명한 프리즘 조각품과 딥 포레스트/에메랄드 그라디언트 텍스트가 극상의 가독성과 세련미를 제공.
+  - *섹션 5 (Contact)*: 스크롤 도달 시 매끄럽게 깊고 신비로운 어두운 밤하늘(보이드 블랙 `#030705`)로 전환되어, 순백의 발광 텍스트와 에메랄드 컨택 버튼이 압도적인 몰입감 형성.
+- **프리텐다드(Pretendard) 단일 서체 및 순수 텍스트 태그**: 이탤릭을 완전히 배제한 단단하고 현대적인 산세리프 서체.
 - **공식 문의 메일**: `studio.chorok@gmail.com` 원클릭 주소 복사 및 메일 앱 실행 지원.
 
 ---
