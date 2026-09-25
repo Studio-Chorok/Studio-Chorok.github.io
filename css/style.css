@@ -42,6 +42,12 @@
   --ease-cinematic: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-gentle: cubic-bezier(0.25, 0.1, 0.25, 1);
   --theme-transition: 0.75s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Interactive Ambient Spotlight Tokens */
+  --mouse-x: 50vw;
+  --mouse-y: 50vh;
+  --spotlight-color: rgba(5, 150, 105, 0.15);
+  --spotlight-glow: rgba(2, 132, 199, 0.08);
 }
 
 /* Deep Void Atmosphere Tokens (Section 5 Contact Theme) */
@@ -66,6 +72,10 @@ body.theme-contact-dark {
   --logo-filter: invert(1) brightness(1.2);
   --nav-link-color: #9cb3a8;
   --nav-link-active: #00ff88;
+
+  /* Interactive Ambient Spotlight for Deep Void */
+  --spotlight-color: rgba(0, 255, 136, 0.22);
+  --spotlight-glow: rgba(0, 242, 254, 0.15);
 }
 
 /* --------------------------------------------------------------------------
@@ -134,6 +144,21 @@ body {
   background: radial-gradient(circle at 50% 50%, transparent 45%, rgba(var(--bg-atmosphere-rgb), 0.65) 100%),
               linear-gradient(180deg, rgba(var(--bg-atmosphere-rgb), 0.15) 0%, rgba(var(--bg-atmosphere-rgb), 0.75) 100%);
   transition: background var(--theme-transition);
+}
+
+/* Interactive Mouse-Tracking Ambient Spotlight */
+#ambient-spotlight {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  pointer-events: none;
+  background: radial-gradient(750px circle at var(--mouse-x, 50vw) var(--mouse-y, 50vh), var(--spotlight-color) 0%, var(--spotlight-glow) 35%, transparent 70%);
+  transition: background var(--theme-transition);
+  mix-blend-mode: normal;
+  will-change: background;
 }
 
 /* --------------------------------------------------------------------------

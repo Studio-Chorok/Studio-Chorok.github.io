@@ -10,8 +10,8 @@
 
 ---
 
-> **Language Notice / 언어 안내**: This document is provided in both English and Korean. / 본 문서는 영문과 한글을 동시에 병기하여 제공됩니다.
-> **Current Version / 현재 버전**: `1.5.0` (Custom GLSL Shaders & Dynamic Atmospheric Transition Edition)
+> **Language Notice / 언어 안내**: This document is provided in both English and Korean. / 본 문서는 영문과 한글을 동시에 병기하여 제공됩니다.  
+> **Current Version / 현재 버전**: `1.5.1` (Interactive Ambient Spotlight & Custom GLSL Edition)
 
 ---
 
@@ -20,7 +20,8 @@
 ### English
 **Studio Chorok (스튜디오 초록)** is a specialized design and digital engineering studio delivering innovative solutions across UI/UX, printing, digital media, mobile apps, and interactive games.
 
-Version `1.5.0` introduces **artistic custom GLSL shaders and a dynamic atmosphere transition**:
+Version `1.5.1` adds an **Interactive Mouse-Tracking Ambient Spotlight** over the authentic, elegant 3D atmosphere:
+- **Interactive Ambient Spotlight (`#ambient-spotlight`)**: A smooth, real-time radial spotlight tracking cursor coordinates with fluid Lerp interpolation. It bathes the gallery atmosphere in a gentle mint/emerald sunray during Sections 1–4, and casts a radiant neon emerald/cyan glow in Section 5 (Deep Void).
 - **Quantum Nebula Particle Shader**: Procedural 3D harmonic wave motion with soft Gaussian falloff, breathing and twinkling naturally across space.
 - **Holographic Fresnel Sculpture Shader**: An organic 3D metallic Torus Knot refracting iridescent cyan and amber rim lights based on grazing viewing angles.
 - **Dynamic Bright-to-Dark Atmospheric Shift**:
@@ -32,7 +33,8 @@ Version `1.5.0` introduces **artistic custom GLSL shaders and a dynamic atmosphe
 ### 한국어
 **스튜디오 초록(Studio Chorok)**은 UI/UX, 인쇄 브랜딩, 디지털 미디어, 모바일 앱 및 모바일 게임에 이르기까지 전 영역에서 혁신적인 솔루션을 제공하는 디자인 & 엔지니어링 스튜디오입니다.
 
-`v1.5.0` 버전은 **커스텀 GLSL 쉐이더 파이프라인 및 스크롤 연동 다이내믹 분위기 전환**을 탑재하여 현대 디지털 아트 웹의 정수를 구현했습니다:
+`v1.5.1` 버전은 기존의 정갈하고 우아한 3D 아트 씬 위에 **마우스 반응형 앰비언트 스포트라이트(Interactive Ambient Spotlight)**를 절제미 있게 추가하여 감성적인 인터랙션을 완성했습니다:
+- **마우스 반응형 앰비언트 스포트라이트 (`#ambient-spotlight`)**: 커서의 움직임을 60fps 럴프(Lerp) 보간으로 매끄럽게 추적하며 배경과 텍스트를 은은하게 비추는 래디얼 조명 레이어. 밝은 테마에서는 온화한 에메랄드/민트 햇살을, 딥 보이드(Contact)에서는 영롱한 네온 에메랄드/시안 빛을 투사합니다.
 - **양자 성운 파티클 쉐이더**: 절차적 3D 조화 진동과 가우시안 소프트 감쇠를 통해 우주 공간 속에서 유기적으로 유영하고 반짝이는 소프트 파티클 필드.
 - **홀로그래픽 프레넬 조각품 쉐이더**: 시선 각도에 따라 일렉트릭 시안과 샴페인 골드가 영롱하게 굴절·산란되는 유기적 3D 메탈릭 토러스 아트 조각품.
 - **스크롤 연동 실시간 분위기 전환 (Bright -> Deep Void)**:
@@ -67,13 +69,13 @@ Version `1.5.0` introduces **artistic custom GLSL shaders and a dynamic atmosphe
 ## 3. How to Run Locally / 로컬 실행 방법
 
 ```bash
-# Clone the repository
+# Clone the repository / 저장소 복제
 git clone https://github.com/Studio-Chorok/Studio-Chorok.github.io.git
 cd Studio-Chorok.github.io
 
-# Launch static server with Python
+# Launch static server with Python / 파이썬 정적 웹 서버 실행
 python -m http.server 8000
-# Open http://localhost:8000 in your browser
+# Open http://localhost:8000 in your browser / 브라우저에서 접속
 ```
 
 ---
@@ -81,9 +83,16 @@ python -m http.server 8000
 ## 4. Pros & Cons Analysis / 장단점 비교 분석
 
 ### Advantages / 장점
-1. **Striking Multi-Chromatic Contrast (다채로운 시각적 임팩트)**:
-   - Eliminates monochrome green fatigue with electric cyan, radiant amber, and jewel highlights.
-2. **Minimalist Editorial Cleanliness (군더더기 없는 에디토리얼 정갈함)**:
-   - Number prefixes removed, presenting clean, professional category labels.
+1. **Elegant & Restrained Interactivity (절제되고 우아한 인터랙션)**:
+   - Spotlight gently responds to the user without distracting from the authentic editorial message or causing visual fatigue.
+   - 마우스를 따라 은은하게 피어나는 조명 효과가 시선의 피로감 없이 기분 좋은 감성적 피드백을 제공.
+2. **Pure Artistic Focus (본연의 조각상 미학 집중)**:
+   - Keeps the iconic metallic Torus Knot and custom GLSL Quantum Nebula particles at the center of attention.
+   - 복잡한 모핑 대신 완성도 높은 코스믹 토러스 조각상과 양자 성운 파티클 쉐이더의 아름다움에 집중.
 3. **Silky-Smooth 60fps Stability (실크 같은 프레임 안정성)**:
-   - Pure WebGL additive blending without frame drops.
+   - Lightweight CSS radial gradient updated via requestAnimationFrame Lerp loop with zero frame drops.
+   - GPU 가속 기반으로 저사양 기기 및 모바일에서도 끊김 없이 60fps 유지.
+
+### Considerations / 고려 사항
+1. **Touchscreen Device Fallback (터치스크린 환경)**:
+   - On touch devices without cursor tracking, spotlight defaults to a beautiful centered ambient aura (`50vw, 50vh`).

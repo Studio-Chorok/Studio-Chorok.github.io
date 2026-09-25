@@ -2,10 +2,11 @@
  * ==========================================================================
  * Studio Chorok - Application Controller (Dynamic Atmosphere & Theme Coordinator)
  * File: js/main.js
- * Version: 1.5.0
+ * Version: 1.5.1
  * Features:
  *   - Bright Luminous Atmosphere for Sections 1-4
  *   - Smooth Dynamic Transition to Deep Cosmic Void for Section 5 (Contact)
+ *   - Interactive Mouse-Tracking Ambient Spotlight
  *   - Clipboard Direct Email Copy & Adaptive Header
  * ==========================================================================
  */
@@ -15,6 +16,13 @@ class AppController {
     this.threeScene = null;
     this.motionManager = null;
     this.sections = [];
+
+    // Interactive mouse tracking for ambient spotlight
+    this.currentMouseX = window.innerWidth / 2;
+    this.currentMouseY = window.innerHeight / 2;
+    this.targetMouseX = this.currentMouseX;
+    this.targetMouseY = this.currentMouseY;
+    this.spotlightRafId = null;
   }
 
   /**
@@ -34,12 +42,15 @@ class AppController {
     this._setupScrollListener();
     this._setupIntersectionObserver();
 
-    // 3. Setup Direct Email Copy & Header
+    // 3. Setup Interactive Ambient Spotlight
+    this._setupInteractiveSpotlight();
+
+    // 4. Setup Direct Email Copy & Header
     this._setupMobileNav();
     this._setupDirectEmailCopy();
     this._setupHeaderEffects();
 
-    console.info('[AppController] Studio Chorok App Bootstrapped with Dynamic Atmosphere (v1.5.0).');
+    console.info('[AppController] Studio Chorok App Bootstrapped with Ambient Spotlight (v1.5.1).');
   }
 
   /**
@@ -99,6 +110,30 @@ class AppController {
     window.addEventListener('scroll', updateScrollStates, { passive: true });
     // Initial run on mount
     updateScrollStates();
+  }
+
+  /**
+   * Smooth, Lerp-based Interactive Spotlight Mouse Tracking
+   * @private
+   */
+  _setupInteractiveSpotlight() {
+    window.addEventListener('mousemove', (e) => {
+      this.targetMouseX = e.clientX;
+      this.targetMouseY = e.clientY;
+    }, { passive: true });
+
+    const updateSpotlight = () => {
+      // Lerp mouse coordinates for fluid cinematic illumination
+      this.currentMouseX += (this.targetMouseX - this.currentMouseX) * 0.08;
+      this.currentMouseY += (this.targetMouseY - this.currentMouseY) * 0.08;
+
+      document.documentElement.style.setProperty('--mouse-x', `${this.currentMouseX.toFixed(1)}px`);
+      document.documentElement.style.setProperty('--mouse-y', `${this.currentMouseY.toFixed(1)}px`);
+
+      this.spotlightRafId = requestAnimationFrame(updateSpotlight);
+    };
+
+    this.spotlightRafId = requestAnimationFrame(updateSpotlight);
   }
 
   /**

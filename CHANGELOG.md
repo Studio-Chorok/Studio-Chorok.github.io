@@ -9,6 +9,21 @@ All notable changes to this project will be documented in this file following th
 
 ---
 
+## [1.5.1] - 2026-09-26
+
+### Added & Refined / 신규 기능 및 디자인 정제
+- **Interactive Mouse-Tracking Ambient Spotlight (`index.html`, `css/style.css`, `js/main.js`)**:
+  - Added `#ambient-spotlight` overlay: Fluid, real-time radial spotlight tracking cursor coordinates via smooth linear interpolation (Lerp).
+  - Sections 1–4 (Bright Atmosphere): Gentle, ethereal emerald/mint sunray spotlight (`rgba(5, 150, 105, 0.15)`).
+  - Section 5 (Deep Void): Radiant neon emerald and cyan glow (`rgba(0, 255, 136, 0.22)`), delivering subtle tactile depth without visual clutter.
+  - 마우스 반응형 앰비언트 스포트라이트 탑재: 커서 좌표를 럴프(Lerp) 보간으로 부드럽게 추적하며 화면 전반에 은은한 빛을 비추는 래디얼 조명 효과 구현.
+  - 밝은 테마에서는 햇살 같은 은은한 에메랄드/민트 광원, 딥 보이드(Section 5)에서는 영롱한 네온 에메랄드/시안 스포트라이트로 자연스러운 공간감과 인터랙티브 피드백 제공.
+- **Pure Architectural Preservation (`js/three-scene.js`)**:
+  - Restored and preserved the authentic metallic Torus Knot centerpiece, Fresnel hologram shader, and 3,200 Quantum Nebula particles in their cleanest, most elegant state.
+  - v1.5.0의 정갈하고 완성도 높은 코스믹 토러스 조각상 및 프레넬 쉐이더, 3,200개 양자 성운 파티클 본연의 미학을 온전히 보존.
+
+---
+
 ## [1.5.0] - 2026-09-24
 
 ### Added & Artistic Breakthrough / 신규 기능 및 아티스틱 혁신
@@ -47,9 +62,6 @@ All notable changes to this project will be documented in this file following th
   - Injected high-contrast accent colors: Electric Cyan (`#00f2fe`), Luminous Amber/Gold (`#ffd166`), and Cosmic Violet into the 3D particle aurora.
   - Implemented dynamic dual rim lighting (Electric Cyan point light & Luminous Gold point light) illuminating the metallic Torus Knot sculpture for exceptional physical depth.
   - Added an inner multi-chromatic gem core with color shifting along scroll progression.
-- **Minimalist Category Tag Styling (`index.html`, `css/style.css`)**:
-  - Removed section index prefixes (`01 / 05` through `05 / 05`) to eliminate visual clutter.
-  - Styled category tags (`OVERVIEW`, `UI / UX INNOVATION`, `PRINTING & DIGITAL CONTENT`, etc.) with luminous cyan pill borders and emerald beacon dots.
 
 ---
 
@@ -58,43 +70,3 @@ All notable changes to this project will be documented in this file following th
 ### Changed / 변경 사항
 - **Official Contact Email Updated**:
   - Updated primary inquiry mailbox to `studio.chorok@gmail.com` across all templates, header CTA, footer links, and the direct clipboard copy handler.
-  - 대표 문의 메일 주소를 `studio.chorok@gmail.com`으로 일괄 교체 (헤더 CTA, 섹션 5 컨택 박스, 푸터 및 클립보드 복사 엔진).
-
----
-
-## [1.2.0] - 2026-09-23
-
-### Major Enhancements & Artistic Refinements / 주요 개선 및 아티스틱 리파인먼트
-- **Original Content Restored 100%**:
-  - Restored the exact, unabridged English text for all 5 sections from the original site (`https://studio-chorok.github.io/`):
-    - *Design & Development Experts*
-    - *UI/UX Innovation*
-    - *Printing & Digital Content*
-    - *Mobile Apps & Game Development*
-    - *Your Total Design & Development Partner*
-- **English-Only Global Interface**:
-  - Removed bilingual toggle, localized dictionaries, and language switchers to establish an uninterrupted, authentic high-end aesthetic.
-- **Calm & Ethereal 3D Background Engine (`js/three-scene.js v1.2.0`)**:
-  - Completely replaced dizzying camera fly-throughs and rapid rotations with a sublime, calm ambient 3D cosmos.
-  - Implemented 2,400 gentle emerald aurora particles swirling in a cylindrical field.
-  - Added a metallic wireframe Torus Knot geometric sculpture with an orbital halo that responds softly to scroll damping.
-- **Artistic Editorial Layout & Typography (`css/style.css v1.2.0`)**:
-  - Integrated Google Fonts' *Cormorant Garamond* for grand display headlines paired with *Plus Jakarta Sans*.
-  - Fullscreen editorial composition with subtle index numbering (`01 / 05` ~ `05 / 05`) and right-side minimal vertical indicator.
-- **Subtle Anime.js Transitions (`js/motion.js v1.2.0`)**:
-  - Re-tuned animations to gentle, ink-dissolving fade-ins (`duration: 1400ms`, `cubicBezier(0.16, 1, 0.3, 1)`).
-
----
-
-## [1.1.0] - 2026-09-23
-- Dynamic 3D camera trajectory, direct email copy card, AI badge removal.
-
----
-
-## [1.0.0] - 2026-09-23
-- Initial major 3D interactive web release.
-
----
-
-## [0.1.0] - Prior Baseline
-- Basic static HTML prototype with simple background color transitions.

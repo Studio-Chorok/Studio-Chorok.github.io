@@ -1,7 +1,7 @@
 # Studio Chorok - Frontend Module Interface & API Specification / 프론트엔드 모듈 인터페이스 및 API 명세서
 
-> **Language Notice / 언어 안내**: This document is provided in both English and Korean. / 본 문서는 영문과 한글을 동시에 병기하여 제공됩니다.
-> **Current Version / 현재 버전**: `1.5.0` (Custom GLSL Shaders & Dynamic Atmospheric Transition Edition)
+> **Language Notice / 언어 안내**: This document is provided in both English and Korean. / 본 문서는 영문과 한글을 동시에 병기하여 제공됩니다.  
+> **Current Version / 현재 버전**: `1.5.1` (Interactive Ambient Spotlight & Custom GLSL Edition)
 
 ---
 
@@ -11,7 +11,7 @@
 | :--- | :--- | :--- | :--- |
 | **3D Shader Engine** | `ThreeScene` | `js/three-scene.js` | Custom GLSL Quantum particle shader, Fresnel holographic sculpture & dynamic theme interpolation / 커스텀 GLSL 양자 파티클 쉐이더, 프레넬 홀로그래픽 조각품 및 실시간 테마 보간 |
 | **Motion Manager** | `MotionManager` | `js/motion.js` | Restrained Anime.js transitions & section progress synchronization / 절제된 Anime.js 트랜지션 및 진행도 인디케이터 동기화 |
-| **App Controller** | `AppController` | `js/main.js` | Scroll event tracking, proximity-based theme dispatch & clipboard copy / 스크롤 이벤트 추적, 근접도 기반 테마 디스패치 및 클립보드 복사 |
+| **App Controller** | `AppController` | `js/main.js` | Scroll tracking, dynamic theme transition, interactive spotlight lerp & clipboard copy / 스크롤 추적, 동적 테마 전환, 인터랙티브 스포트라이트 보간 및 클립보드 복사 |
 
 ---
 
@@ -64,7 +64,7 @@ interface IMotionManager {
 
 ---
 
-## 4. AppController API (`js/main.js v1.2.1`)
+## 4. AppController API (`js/main.js v1.5.1`)
 
 ### Class Definition / 클래스 정의
 ```typescript
@@ -74,5 +74,7 @@ interface IAppController {
 ```
 
 ### Methods / 메서드 상세
-- `init()`: Bootstraps 3D and motion sub-systems, binds scroll progress, registers section IntersectionObservers, and binds one-click clipboard copying (`studio.chorok@gmail.com`).
+- `init()`: Bootstraps 3D and motion sub-systems, binds scroll progress, initializes interactive spotlight tracking, registers section IntersectionObservers, and binds one-click clipboard copying (`studio.chorok@gmail.com`).
+- `_setupInteractiveSpotlight()`: Binds mousemove events and uses a 60fps requestAnimationFrame loop with linear interpolation (Lerp `factor: 0.08`) to update `--mouse-x` and `--mouse-y` CSS custom properties on `#ambient-spotlight`.
+- `_setupScrollListener()`: Calculates normalized scroll progress and proximity to Section 5, orchestrating smooth background color shifts and Three.js shader themes.
 - `_setupDirectEmailCopy()`: Copies `studio.chorok@gmail.com` to user clipboard and pops the emerald toast notice for 2.8 seconds.

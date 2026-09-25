@@ -1,7 +1,7 @@
 # Studio Chorok - Technical Wiki & Function Reference / 기술 위키 및 함수 상세 레퍼런스
 
-> **Language Notice / 언어 안내**: This document is provided in both English and Korean. / 본 문서는 영문과 한글을 동시에 병기하여 제공됩니다.
-> **Current Version / 현재 버전**: `1.5.0` (Custom GLSL Shaders & Dynamic Atmospheric Transition Edition)
+> **Language Notice / 언어 안내**: This document is provided in both English and Korean. / 본 문서는 영문과 한글을 동시에 병기하여 제공됩니다.  
+> **Current Version / 현재 버전**: `1.5.1` (Interactive Ambient Spotlight & Custom GLSL Edition)
 
 ---
 
@@ -44,9 +44,46 @@ vec3 finalColor = baseTone + rimColor * (fresnelPow * 1.6);
 
 ---
 
-## 2. Dynamic Atmospheric Transition Mechanics (`main.js` & `style.css`)
+## 2. Interactive Ambient Spotlight Mechanism (`style.css` & `main.js v1.5.1`)
 
-### 2.1 Scroll-Driven Proximity Interpolation
+### 2.1 Smooth Cursor Tracking via Linear Interpolation (Lerp)
+```javascript
+// main.js: AppController._setupInteractiveSpotlight()
+window.addEventListener('mousemove', (e) => {
+  this.targetMouseX = e.clientX;
+  this.targetMouseY = e.clientY;
+}, { passive: true });
+
+const updateSpotlight = () => {
+  this.currentMouseX += (this.targetMouseX - this.currentMouseX) * 0.08;
+  this.currentMouseY += (this.targetMouseY - this.currentMouseY) * 0.08;
+  document.documentElement.style.setProperty('--mouse-x', `${this.currentMouseX.toFixed(1)}px`);
+  document.documentElement.style.setProperty('--mouse-y', `${this.currentMouseY.toFixed(1)}px`);
+  this.spotlightRafId = requestAnimationFrame(updateSpotlight);
+};
+```
+- **EN**: Instead of abruptly updating coordinates on raw mouse events, a 60fps Lerp dampening loop (`factor: 0.08`) generates a buttery smooth, organic fluid light movement.
+- **KO**: 마우스 이벤트마다 좌표를 즉시 갱신하는 대신 60fps Lerp 감쇠 루프(`factor: 0.08`)를 통해 빛이 마우스를 부드럽게 따라오는 유기적인 감성 조명을 연출합니다.
+
+### 2.2 Radial Spotlight CSS Rendering
+```css
+#ambient-spotlight {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  z-index: 2; pointer-events: none;
+  background: radial-gradient(750px circle at var(--mouse-x, 50vw) var(--mouse-y, 50vh), 
+    var(--spotlight-color) 0%, var(--spotlight-glow) 35%, transparent 70%);
+  transition: background var(--theme-transition);
+}
+```
+- **EN**: Renders a large 750px feathered radial spotlight over the background canvas. Seamlessly adapts its color between luminous emerald-mint in bright mode and glowing neon-cyan in deep void mode.
+- **KO**: 3D 캔버스 위에 750px 크기의 소프트 래디얼 그라데이션 스포트라이트를 투사합니다. 밝은 모드에서는 은은한 에메랄드/민트 햇살을, 딥 보이드 모드에서는 영롱한 네온 에메랄드/시안 조명을 자동으로 전환합니다.
+
+---
+
+## 3. Dynamic Atmospheric Transition Mechanics (`main.js` & `style.css`)
+
+### 3.1 Scroll-Driven Proximity Interpolation
 ```javascript
 // main.js: Dynamic Section 5 Proximity Factor
 const startThreshold = windowHeight * 0.95;
@@ -60,7 +97,7 @@ themeFactor = (startThreshold - currentPos) / (startThreshold - endThreshold);
 
 ---
 
-## 2. Pretendard Typography & Pure Minimalist Tag System (`style.css v1.4.0`)
+## 4. Pretendard Typography & Pure Minimalist Tag System (`style.css`)
 
 - **Single Sans-Serif Font System (`Pretendard`)**:
   - Unified all display headlines, section tags, body copy, and UI controls under **Pretendard**.
@@ -75,15 +112,10 @@ themeFactor = (startThreshold - currentPos) / (startThreshold - endThreshold);
     - `MOBILE APPS & GAME DEVELOPMENT`
     - `YOUR TOTAL PARTNER`
   - 초록색 점과 타원형 테두리/배경을 제거하여 순수한 시안 텍스트로만 정갈하게 구성.
-- **Elimination of Auxiliary Quote Frames**:
-  - Removed all artificial quote frames (*"Synthesizing aesthetics & engineering into singular harmony."*) to direct 100% of reader attention to authentic core messages.
-  - 부가적인 인용구 박스를 일체 제거하여 핵심 메시지에 집중.
-- **Luminous Shimmer Title Gradient**:
-  - `linear-gradient(135deg, #ffffff 10%, #00f2fe 45%, #00ff88 75%, #ffd166 100%)` applied cleanly to `.title-gradient` key terms.
 
 ---
 
-## 3. Direct Inquiries Handler (`main.js v1.2.1`)
+## 5. Direct Inquiries Handler (`main.js v1.2.1`)
 
 ```javascript
 // Asynchronous Clipboard Copy

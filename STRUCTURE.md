@@ -1,7 +1,7 @@
 # Studio Chorok Architecture & System Structure / 시스템 구조 및 아키텍처 명세서
 
-> **Language Notice / 언어 안내**: This document is provided in both English and Korean. / 본 문서는 영문과 한글을 동시에 병기하여 제공됩니다.
-> **Current Version / 현재 버전**: `1.5.0` (Custom GLSL Shaders & Dynamic Atmospheric Transition Edition)
+> **Language Notice / 언어 안내**: This document is provided in both English and Korean. / 본 문서는 영문과 한글을 동시에 병기하여 제공됩니다.  
+> **Current Version / 현재 버전**: `1.5.1` (Interactive Ambient Spotlight & Custom GLSL Edition)
 
 ---
 
@@ -9,13 +9,13 @@
 
 ```text
 Studio-Chorok.github.io/
-├── index.html                  # Fullscreen Semantic Layout / 풀스크린 시맨틱 웹 문서
+├── index.html                  # Fullscreen Semantic Layout with Ambient Spotlight / 풀스크린 시맨틱 레이아웃 및 스포트라이트 오버레이
 ├── css/
-│   └── style.css               # Dual Luminous & Deep Void Atmosphere Tokens / 밝은 갤러리 및 딥 보이드 듀얼 테마 스타일
+│   └── style.css               # Dual Atmosphere Tokens & Ambient Spotlight Styles / 듀얼 테마 토큰 및 앰비언트 스포트라이트 스타일
 ├── js/
-│   ├── three-scene.js          # Custom GLSL Shaders & Atmospheric Three.js Engine / 커스텀 GLSL 쉐이더 및 배경 3D 엔진
+│   ├── three-scene.js          # Custom GLSL Shaders & Metallic Torus Atmosphere / 커스텀 GLSL 쉐이더 및 메탈릭 토러스 3D 엔진
 │   ├── motion.js               # Restrained Stagger Transitions / 절제된 시네마틱 스태거 모션
-│   └── main.js                 # App Controller & Scroll Theme Coordinator / 스크롤 기반 테마 전환 및 앱 코디네이터
+│   └── main.js                 # App Controller & Spotlight Lerp Coordinator / 스크롤 기반 테마 전환 및 스포트라이트 코디네이터
 ├── img/
 │   └── CI.png                  # Studio Chorok Corporate Identity Logo / 스튜디오 초록 공식 CI 로고
 ├── app-ads.txt                 # Ad Verification File / 광고주 인증 텍스트
@@ -37,11 +37,12 @@ graph TD
     subgraph ClientBrowser [Client Browser Environment / 클라이언트 브라우저 환경]
         DOM[HTML5 Fullscreen Layout - Pretendard]
         CanvasWebGL[WebGL Canvas #webgl-canvas-container]
+        Spotlight[Interactive Spotlight #ambient-spotlight]
         ThemeLayer[Dual Luminous / Deep Void Theme Engine]
     end
 
     subgraph CoreEngine [JavaScript Modular Engine Layer / 자바스크립트 모듈 엔진 레이어]
-        AppCtrl[AppController - main.js v1.5.0]
+        AppCtrl[AppController - main.js v1.5.1]
         ThreeEng[ThreeScene - GLSL Shaders & Atmosphere - three-scene.js v1.5.0]
         MotionEng[MotionManager - motion.js]
         Clipboard[Navigator Clipboard API & Toast Feedback]
@@ -62,9 +63,11 @@ graph TD
     AppCtrl --> ThreeEng
     AppCtrl --> MotionEng
     AppCtrl --> Clipboard
+    AppCtrl --> Spotlight
     
     ThreeEng --> ThreeJS
     ThreeEng --> CanvasWebGL
+    ThreeEng --> Shaders
     
     MotionEng --> AnimeJS
     MotionEng --> DOM
@@ -76,32 +79,30 @@ graph TD
 
 ### English
 1. **Presentation & View Layer (`index.html`, `css/style.css`)**:
-   - Clean fullscreen composition presenting the authentic 5 sections without promotional quotes or frames.
-   - Standardized on **Pretendard** as the single unified sans-serif font system, completely omitting italics.
-   - Refined category tags (`Overview`, `UI / UX Innovation`, `Printing & Digital Content`, etc.) rendered as pure uppercase Cyan text with zero oval/dot ornamentation.
-   - English-only interface focused purely on core business communication.
-2. **Multi-Chromatic 3D WebGL Background Layer (`js/three-scene.js v1.3.0`)**:
-   - High-contrast multi-chromatic palette blending signature Emerald with Electric Cyan, Luminous Amber/Gold, and Cosmic Violet.
-   - Dual rim lighting setup: dynamic Cyan and Gold point lights illuminating a metallic Torus Knot sculpture and pulsating inner gem core.
-   - 2,800 particles swirling gracefully in a cylindrical space with subtle camera depth parallax.
-3. **Motion & Interaction Layer (`js/motion.js v1.2.0`)**:
-   - Calibrated, restrained stagger transitions fading into view without dizzying velocity.
-   - Right-side minimal vertical progress tracker with semantic label tooltips.
-4. **App Coordination Layer (`js/main.js v1.2.1`)**:
-   - Lightweight coordinator managing scroll progress and one-click email copying (`studio.chorok@gmail.com`) with instant toast popup.
+   - Clean fullscreen composition presenting authentic editorial sections without clutter.
+   - Standardized on **Pretendard** typography, strictly omitting italic styles.
+   - Pure Cyan uppercase category tags for maximum clarity.
+   - Added `#ambient-spotlight`: A fluid, real-time radial gradient spotlight tracking cursor movements smoothly across viewport coordinates.
+2. **Multi-Chromatic 3D WebGL Atmosphere Layer (`js/three-scene.js v1.5.0`)**:
+   - 3,200 Quantum Nebula particles powered by custom GLSL shaders with harmonic waves and Gaussian falloff.
+   - Metallic Torus Knot centerpiece sculpture utilizing custom Fresnel iridescent holographic reflections.
+   - Dual rim lighting setup (Electric Cyan & Champagne Gold point lights) providing depth.
+3. **Motion & Interaction Layer (`js/motion.js`)**:
+   - Calibrated, restrained stagger transitions fading into view smoothly.
+4. **App Coordination Layer (`js/main.js v1.5.1`)**:
+   - Lightweight coordinator managing scroll progress, dynamic gallery-to-deep-void theme transitions, smooth mouse Lerp spotlight positioning, and one-click email copying.
 
 ### 한국어
 1. **프레젠테이션 & 뷰 레이어 (`index.html`, `css/style.css`)**:
-   - 부가적인 인용구 박스를 일체 배제하고 원본 5개 섹션의 본문 텍스트에 온전히 집중한 풀스크린 레이아웃.
-   - 전체 타이포그래피를 **Pretendard** 단일 산세리프 체계로 통일하고 이탤릭체를 완전히 배제하여 단단하고 명료한 가독성 확보.
-   - 카테고리 태그 앞의 초록색 점 및 타원형 배경을 없애고 세련된 시안 텍스트 형태로만 간결하게 표시.
-   - 글로벌 비즈니스에 최적화된 영문 전용(English-Only) 인터페이스.
-2. **멀티 크로매틱 3D WebGL 배경 레이어 (`js/three-scene.js v1.3.0`)**:
-   - 단조로운 단색 초록을 탈피하여, 시그니처 에메랄드에 일렉트릭 시안(Electric Cyan), 럭셔리 앰버/골드(Luminous Gold), 코스믹 바이올렛을 결합한 다채로운 임팩트 컬러 팔레트 구축.
-   - 시안과 골드의 듀얼 림 라이팅(Dual Rim Lighting)으로 금속성 토러스 조각품과 내부 보석 코어의 입체감 극대화.
-   - 2,800개의 멀티 컬러 오로라 입자가 고요하게 유영하며 안정적인 시각적 깊이감 형성.
-3. **모션 & 인터랙션 레이어 (`js/motion.js v1.2.0`)**:
-   - 잉크가 스며들듯 부드럽게 나타나는 절제된 시네마틱 스태거 트랜지션.
-   - 우측 미니멀 수직 인디케이터 연동.
-4. **앱 코디네이션 레이어 (`js/main.js v1.2.1`)**:
-   - 가볍고 정교한 스크롤 진행도 계산 및 `studio.chorok@gmail.com` 원클릭 주소 복사 토스트 인터랙션.
+   - 불필요한 장식 박스를 배제하고 본문 텍스트에 온전히 집중한 풀스크린 레이아웃.
+   - 타이포그래피를 **Pretendard** 단일 산세리프 체계로 통일하고 이탤릭체를 완전히 배제.
+   - 순수 시안 대문자 카테고리 태그로 군더더기 없는 가독성 확보.
+   - `#ambient-spotlight` 탑재: 마우스 포인터의 위치를 부드럽게 추적하며 화면 전반에 은은한 빛을 투사하는 래디얼 조명 레이어.
+2. **멀티 크로매틱 3D WebGL 배경 레이어 (`js/three-scene.js v1.5.0`)**:
+   - 3,200개의 양자 성운 파티클: 3D 조화 파동과 가우시안 소프트 감쇠를 머금은 커스텀 GLSL 쉐이더.
+   - 메탈릭 코스믹 토러스 조각상: 시선 각도에 따라 일렉트릭 시안과 골드가 영롱하게 굴절되는 프레넬 홀로그래픽 쉐이더.
+   - 듀얼 림라이트(시안 & 골드) 및 내부 크리스탈 코어로 극적인 입체감 형성.
+3. **모션 & 인터랙션 레이어 (`js/motion.js`)**:
+   - 절제되고 세련된 스태거 페이드 인 트랜지션 제공.
+4. **앱 코디네이션 레이어 (`js/main.js v1.5.1`)**:
+   - 스크롤 진행률, 밝은 갤러리/딥 보이드 테마 전환, 마우스 스포트라이트 럴프(Lerp) 보간 및 원클릭 메일 복사 총괄.
