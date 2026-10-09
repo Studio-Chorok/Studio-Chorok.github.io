@@ -24,6 +24,19 @@ All notable changes to this project will be documented in this file following th
 
 ---
 
+## [1.6.0] - 2026-10-09
+
+### Added / 신규 기능 및 페이지 추가
+- **CUBEOUT: Stealth Escape Privacy Policy Subpage (`Game/CubeOut/Privacy/`)**:
+  - Implemented the official dedicated Privacy Policy subpage for the mobile game *CUBEOUT: Stealth Escape* under `Game/CubeOut/Privacy/index.html`.
+  - Embedded all 10 legal articles including in-game local storage principles, Google AdMob SDK disclosure, Apple Game Center leaderboard integration, App Store / Google Play in-app purchase verification, children's privacy, and user rights.
+  - Provided interactive bilingual toggling between authentic English legal text and professional Korean legal translation.
+  - Added a fallback lowercase redirect route (`game/cubeout/privacy/index.html`) and integrated a quick access link in the main footer.
+  - 모바일 게임 *CUBEOUT: Stealth Escape* 공식 개인정보처리방침 서브페이지 신설 (`Game/CubeOut/Privacy/index.html`).
+  - 로컬 데이터 보관 원칙, Google AdMob 광고 SDK, Apple Game Center 순위표, 스토어 인앱 결제, 아동 개인정보 보호 등 10개 법률 조항 전문 수록 및 영/한 즉시 전환 인터랙션 제공.
+
+---
+
 ## [1.5.0] - 2026-09-24
 
 ### Added & Artistic Breakthrough / 신규 기능 및 아티스틱 혁신

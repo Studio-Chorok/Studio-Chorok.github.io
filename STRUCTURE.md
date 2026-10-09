@@ -1,7 +1,7 @@
 # Studio Chorok Architecture & System Structure / 시스템 구조 및 아키텍처 명세서
 
 > **Language Notice / 언어 안내**: This document is provided in both English and Korean. / 본 문서는 영문과 한글을 동시에 병기하여 제공됩니다.  
-> **Current Version / 현재 버전**: `1.5.1` (Interactive Ambient Spotlight & Custom GLSL Edition)
+> **Current Version / 현재 버전**: `1.6.0` (CUBEOUT Privacy Policy Subpage Edition)
 
 ---
 
@@ -9,23 +9,31 @@
 
 ```text
 Studio-Chorok.github.io/
-├── index.html                  # Fullscreen Semantic Layout with Ambient Spotlight / 풀스크린 시맨틱 레이아웃 및 스포트라이트 오버레이
+├── index.html                      # Fullscreen Semantic Layout with Ambient Spotlight / 풀스크린 시맨틱 레이아웃 및 스포트라이트 오버레이
+├── Game/
+│   └── CubeOut/
+│       └── Privacy/
+│           └── index.html          # CUBEOUT: Stealth Escape Official Privacy Policy / CUBEOUT 공식 개인정보처리방침
+├── game/
+│   └── cubeout/
+│       └── privacy/
+│           └── index.html          # Fallback Case-Insensitive Redirect / 소문자 URL 대비 리다이렉트
 ├── css/
-│   └── style.css               # Dual Atmosphere Tokens & Ambient Spotlight Styles / 듀얼 테마 토큰 및 앰비언트 스포트라이트 스타일
+│   └── style.css                   # Dual Atmosphere Tokens & Ambient Spotlight Styles / 듀얼 테마 토큰 및 앰비언트 스포트라이트 스타일
 ├── js/
-│   ├── three-scene.js          # Custom GLSL Shaders & Metallic Torus Atmosphere / 커스텀 GLSL 쉐이더 및 메탈릭 토러스 3D 엔진
-│   ├── motion.js               # Restrained Stagger Transitions / 절제된 시네마틱 스태거 모션
-│   └── main.js                 # App Controller & Spotlight Lerp Coordinator / 스크롤 기반 테마 전환 및 스포트라이트 코디네이터
+│   ├── three-scene.js              # Custom GLSL Shaders & Metallic Torus Atmosphere / 커스텀 GLSL 쉐이더 및 메탈릭 토러스 3D 엔진
+│   ├── motion.js                   # Restrained Stagger Transitions / 절제된 시네마틱 스태거 모션
+│   └── main.js                     # App Controller & Spotlight Lerp Coordinator / 스크롤 기반 테마 전환 및 스포트라이트 코디네이터
 ├── img/
-│   └── CI.png                  # Studio Chorok Corporate Identity Logo / 스튜디오 초록 공식 CI 로고
-├── app-ads.txt                 # Ad Verification File / 광고주 인증 텍스트
-├── googleb8b41052f9145a46.html # Google Search Console Verification / 구글 서치 콘솔 소유권 확인 파일
-├── STRUCTURE.md                # System Architecture Documentation / 시스템 아키텍처 및 구조 문서
-├── API.md                      # Module Interface & Event Specification / 모듈 인터페이스 및 이벤트 규격서
-├── WIKI.md                     # Function Reference & Technical Wiki / 함수 상세 레퍼런스 및 테크니컬 위키
-├── README.md                   # Project Overview, Usage & Pros/Cons / 프로젝트 개요, 사용방법 및 장단점
-├── CHANGELOG.md                # SemVer Version History & Changelog / 시맨틱 버저닝 기반 변경 이력서
-└── GUIDE.md                    # User Customization & Deployment Guide / 사용자 설정 및 배포 가이드
+│   └── CI.png                      # Studio Chorok Corporate Identity Logo / 스튜디오 초록 공식 CI 로고
+├── app-ads.txt                     # Ad Verification File / 광고주 인증 텍스트
+├── googleb8b41052f9145a46.html     # Google Search Console Verification / 구글 서치 콘솔 소유권 확인 파일
+├── STRUCTURE.md                    # System Architecture Documentation / 시스템 아키텍처 및 구조 문서
+├── API.md                          # Module Interface & Event Specification / 모듈 인터페이스 및 이벤트 규격서
+├── WIKI.md                         # Function Reference & Technical Wiki / 함수 상세 레퍼런스 및 테크니컬 위키
+├── README.md                       # Project Overview, Usage & Pros/Cons / 프로젝트 개요, 사용방법 및 장단점
+├── CHANGELOG.md                    # SemVer Version History & Changelog / 시맨틱 버저닝 기반 변경 이력서
+└── GUIDE.md                        # User Customization & Deployment Guide / 사용자 설정 및 배포 가이드
 ```
 
 ---

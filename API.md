@@ -1,17 +1,19 @@
 # Studio Chorok - Frontend Module Interface & API Specification / 프론트엔드 모듈 인터페이스 및 API 명세서
 
 > **Language Notice / 언어 안내**: This document is provided in both English and Korean. / 본 문서는 영문과 한글을 동시에 병기하여 제공됩니다.  
-> **Current Version / 현재 버전**: `1.5.1` (Interactive Ambient Spotlight & Custom GLSL Edition)
+> **Current Version / 현재 버전**: `1.6.0` (CUBEOUT Privacy Policy Subpage Edition)
 
 ---
 
-## 1. Module Overview / 모듈 개요
+## 1. Module & Page Overview / 모듈 및 페이지 개요
 
-| Module / 모듈 | Class / 클래스 | File / 파일 | Responsibility / 담당 역할 |
+| Module / Page | Class / File | Route Path | Responsibility / 담당 역할 |
 | :--- | :--- | :--- | :--- |
-| **3D Shader Engine** | `ThreeScene` | `js/three-scene.js` | Custom GLSL Quantum particle shader, Fresnel holographic sculpture & dynamic theme interpolation / 커스텀 GLSL 양자 파티클 쉐이더, 프레넬 홀로그래픽 조각품 및 실시간 테마 보간 |
-| **Motion Manager** | `MotionManager` | `js/motion.js` | Restrained Anime.js transitions & section progress synchronization / 절제된 Anime.js 트랜지션 및 진행도 인디케이터 동기화 |
-| **App Controller** | `AppController` | `js/main.js` | Scroll tracking, dynamic theme transition, interactive spotlight lerp & clipboard copy / 스크롤 추적, 동적 테마 전환, 인터랙티브 스포트라이트 보간 및 클립보드 복사 |
+| **3D Shader Engine** | `ThreeScene` (`js/three-scene.js`) | `/` | Custom GLSL Quantum particle shader, Fresnel holographic sculpture & dynamic theme interpolation |
+| **Motion Manager** | `MotionManager` (`js/motion.js`) | `/` | Restrained Anime.js transitions & section progress synchronization |
+| **App Controller** | `AppController` (`js/main.js`) | `/` | Scroll tracking, dynamic theme transition, interactive spotlight lerp & clipboard copy |
+| **CUBEOUT Privacy Policy** | Static Legal App (`Game/CubeOut/Privacy/index.html`) | `/Game/CubeOut/Privacy/` | Interactive bilingual legal policy viewer, TOC navigation, responsive print CSS |
+| **URL Fallback Handler** | Static Redirect (`game/cubeout/privacy/index.html`) | `/game/cubeout/privacy/` | HTTP-equiv canonical redirect to standard case-sensitive privacy route |
 
 ---
 

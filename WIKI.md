@@ -1,7 +1,7 @@
 # Studio Chorok - Technical Wiki & Function Reference / 기술 위키 및 함수 상세 레퍼런스
 
 > **Language Notice / 언어 안내**: This document is provided in both English and Korean. / 본 문서는 영문과 한글을 동시에 병기하여 제공됩니다.  
-> **Current Version / 현재 버전**: `1.5.1` (Interactive Ambient Spotlight & Custom GLSL Edition)
+> **Current Version / 현재 버전**: `1.6.0` (CUBEOUT Privacy Policy Subpage Edition)
 
 ---
 
@@ -123,3 +123,27 @@ AppController.prototype._setupDirectEmailCopy()
 ```
 - Coordinates native `navigator.clipboard.writeText('studio.chorok@gmail.com')`.
 - Displays the floating `#toast-notice` for 2.8 seconds, then slides out smoothly via CSS transforms.
+
+---
+
+## 6. CUBEOUT: Stealth Escape Privacy Policy Subpage (`Game/CubeOut/Privacy/`)
+
+### 6.1 Subpage Architecture
+- **Location**: `Game/CubeOut/Privacy/index.html` (Canonical route)
+- **Fallback Route**: `game/cubeout/privacy/index.html` (Case-insensitive redirect)
+- **Design Philosophy**: High-legibility editorial legal document adhering to Google Play & Apple App Store developer policy guidelines.
+- **Key Features**:
+  1. **Strict Client-Side Storage Principle**:
+     - Game progression, coins, unlocks, and records are stored exclusively in local device storage.
+     - Zero collection of real names, phone numbers, contacts, or fine GPS coordinates on Studio Chorok servers.
+  2. **Third-Party Disclosures**:
+     - **Google AdMob SDK**: IP-based coarse geolocation, Ad ID / App Set ID, interaction logs, TLS encryption.
+     - **Apple Game Center**: Account ID, leaderboards, scores/stars.
+     - **In-App Purchases (IAP)**: Store-handled receipts, no credit card or billing storage on Studio Chorok servers.
+  3. **Interactive Bilingual Support**:
+     - Instant client-side DOM toggle between authentic English legal source text and complete Korean legal translation.
+  4. **Accessibility & Print Support**:
+     - Semantic HTML5 headings, table of contents with anchor links, print CSS rules (`@media print`).
+- **담당 역할 (KO)**:
+  - 모바일 게임 *CUBEOUT: Stealth Escape*의 구글 플레이 및 애플 앱스토어 심사 컴플라이언스를 완벽히 충족하는 전용 개인정보처리방침 웹페이지.
+  - 로컬 단말 저장 원칙, 제3자 SDK(AdMob, Game Center, Store IAP) 처리 내역 투명 공개 및 실시간 영/한 전환 기능 제공.

@@ -11,7 +11,7 @@
 ---
 
 > **Language Notice / 언어 안내**: This document is provided in both English and Korean. / 본 문서는 영문과 한글을 동시에 병기하여 제공됩니다.  
-> **Current Version / 현재 버전**: `1.5.1` (Interactive Ambient Spotlight & Custom GLSL Edition)
+> **Current Version / 현재 버전**: `1.6.0` (CUBEOUT Privacy Policy Subpage Edition)
 
 ---
 
@@ -20,26 +20,30 @@
 ### English
 **Studio Chorok (스튜디오 초록)** is a specialized design and digital engineering studio delivering innovative solutions across UI/UX, printing, digital media, mobile apps, and interactive games.
 
-Version `1.5.1` adds an **Interactive Mouse-Tracking Ambient Spotlight** over the authentic, elegant 3D atmosphere:
-- **Interactive Ambient Spotlight (`#ambient-spotlight`)**: A smooth, real-time radial spotlight tracking cursor coordinates with fluid Lerp interpolation. It bathes the gallery atmosphere in a gentle mint/emerald sunray during Sections 1–4, and casts a radiant neon emerald/cyan glow in Section 5 (Deep Void).
-- **Quantum Nebula Particle Shader**: Procedural 3D harmonic wave motion with soft Gaussian falloff, breathing and twinkling naturally across space.
-- **Holographic Fresnel Sculpture Shader**: An organic 3D metallic Torus Knot refracting iridescent cyan and amber rim lights based on grazing viewing angles.
-- **Dynamic Bright-to-Dark Atmospheric Shift**:
-  - *Sections 1–4*: Luminous, ethereal bright gallery atmosphere (`#f2f8f5`) with translucent prism art and high-contrast deep forest/emerald gradient Pretendard typography.
-  - *Section 5 (Contact)*: Automatically transitions into a deep obsidian cosmic void (`#030705`), dramatically illuminating radiant white typography and glowing emerald buttons.
+Version `1.6.0` introduces the official dedicated **Privacy Policy Subpage for the mobile game CUBEOUT: Stealth Escape**:
+- **CUBEOUT Privacy Policy Subpage (`Game/CubeOut/Privacy/`)**:
+  - Live Legal URL: [Game/CubeOut/Privacy/](file:///d:/Git/Project/Studio-Chorok.github.io/Game/CubeOut/Privacy/index.html)
+  - Compliant with Google Play and Apple App Store privacy disclosure standards.
+  - Covers local save policies, Google AdMob SDK disclosures, Apple Game Center leaderboards, In-App Purchase verification, and children's privacy.
+  - Interactive client-side toggle between authentic English source text and Korean legal translation.
+- **Interactive Ambient Spotlight (`#ambient-spotlight`)**: A smooth, real-time radial spotlight tracking cursor coordinates with fluid Lerp interpolation.
+- **Custom GLSL Shader Engine**: Quantum Nebula particles and Holographic Fresnel metallic Torus Knot sculpture.
+- **Dynamic Bright-to-Dark Atmospheric Shift**: Luminous bright gallery for Sections 1–4, seamless transition to deep obsidian void for Section 5 (Contact).
 - **Minimalist Pretendard Typography**: Unified sans-serif system with strictly no italics and pure text category tags.
 - **Direct Official Inquiry**: Direct one-click email copying for `studio.chorok@gmail.com`.
 
 ### 한국어
 **스튜디오 초록(Studio Chorok)**은 UI/UX, 인쇄 브랜딩, 디지털 미디어, 모바일 앱 및 모바일 게임에 이르기까지 전 영역에서 혁신적인 솔루션을 제공하는 디자인 & 엔지니어링 스튜디오입니다.
 
-`v1.5.1` 버전은 기존의 정갈하고 우아한 3D 아트 씬 위에 **마우스 반응형 앰비언트 스포트라이트(Interactive Ambient Spotlight)**를 절제미 있게 추가하여 감성적인 인터랙션을 완성했습니다:
-- **마우스 반응형 앰비언트 스포트라이트 (`#ambient-spotlight`)**: 커서의 움직임을 60fps 럴프(Lerp) 보간으로 매끄럽게 추적하며 배경과 텍스트를 은은하게 비추는 래디얼 조명 레이어. 밝은 테마에서는 온화한 에메랄드/민트 햇살을, 딥 보이드(Contact)에서는 영롱한 네온 에메랄드/시안 빛을 투사합니다.
-- **양자 성운 파티클 쉐이더**: 절차적 3D 조화 진동과 가우시안 소프트 감쇠를 통해 우주 공간 속에서 유기적으로 유영하고 반짝이는 소프트 파티클 필드.
-- **홀로그래픽 프레넬 조각품 쉐이더**: 시선 각도에 따라 일렉트릭 시안과 샴페인 골드가 영롱하게 굴절·산란되는 유기적 3D 메탈릭 토러스 아트 조각품.
-- **스크롤 연동 실시간 분위기 전환 (Bright -> Deep Void)**:
-  - *섹션 1~4*: 맑고 몽환적인 밝은 아트 갤러리 분위기(`#f2f8f5`) 속에서 투명한 프리즘 조각품과 딥 포레스트/에메랄드 그라디언트 텍스트가 극상의 가독성과 세련미를 제공.
-  - *섹션 5 (Contact)*: 스크롤 도달 시 매끄럽게 깊고 신비로운 어두운 밤하늘(보이드 블랙 `#030705`)로 전환되어, 순백의 발광 텍스트와 에메랄드 컨택 버튼이 압도적인 몰입감 형성.
+`v1.6.0` 버전은 모바일 게임 **CUBEOUT: Stealth Escape 공식 개인정보처리방침 서브페이지**를 신설하여 앱스토어 배포 컴플라이언스를 완벽히 수립했습니다:
+- **CUBEOUT 개인정보처리방침 서브페이지 (`Game/CubeOut/Privacy/`)**:
+  - 실서비스 경로: [Game/CubeOut/Privacy/](file:///d:/Git/Project/Studio-Chorok.github.io/Game/CubeOut/Privacy/index.html)
+  - 구글 플레이 및 애플 앱스토어의 개인정보 처리 공시 요구사항을 100% 충족.
+  - 단말기 로컬 데이터 저장 원칙, Google AdMob 광고 SDK 연동, Apple Game Center 순위표, 인앱 결제(IAP) 검증, 아동 개인정보 보호 등 10개 조항 수록.
+  - 공식 영문 원문 및 전문 한국어 번역 간의 실시간 토글 인터랙션 제공.
+- **마우스 반응형 앰비언트 스포트라이트 (`#ambient-spotlight`)**: 커서 좌표를 60fps 럴프(Lerp)로 부드럽게 추적하며 은은한 감성 조명을 연출.
+- **커스텀 GLSL 쉐이더 엔진**: 양자 성운 파티클 및 프레넬 홀로그래픽 조각품 탑재.
+- **스크롤 연동 실시간 분위기 전환 (Bright -> Deep Void)**: 맑은 갤러리 분위기(섹션 1~4)에서 딥 보이드 밤하늘(섹션 5 Contact)로 부드러운 페이드 전환.
 - **프리텐다드(Pretendard) 단일 서체 및 순수 텍스트 태그**: 이탤릭을 완전히 배제한 단단하고 현대적인 산세리프 서체.
 - **공식 문의 메일**: `studio.chorok@gmail.com` 원클릭 주소 복사 및 메일 앱 실행 지원.
 
